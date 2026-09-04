@@ -1,4 +1,18 @@
 /* surcharge github markdown styles */
+.flex {
+  display: flex;
+}
+.items-end {
+  align-items: end;
+}
+@for $i from 1 through 8 {
+  .gap-#{$i} {
+    gap: #{$i * 4}px;
+  }
+}
+.leading-none {
+  line-height: 1;
+}
 .markdown-body {
   // min-width: 638px;
   min-width: unset;
@@ -55,7 +69,9 @@
     background-repeat: no-repeat;
     background-position: center bottom;
     background-size: 100% 0px;
-    transition: background-size 0.15s, color 0.25s;
+    transition:
+      background-size 0.15s,
+      color 0.25s;
     &:hover,
     &:focus {
       color: #ff7200;
@@ -73,32 +89,30 @@
 
 /* form */
 .markdown-body form {
-  div {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0;
-    padding: 0;
-    border: none;
-    max-width: 368px;
-    label {
-      // grow ✓ shrink 𐄂 basis 100% (init size before remaining space is redistributed)
-      flex: 1 0 100%;
-      color: #ff7200;
-    }
-    input {
-      flex: 1;
-      min-width: 70px; // eq no-wrap
-    }
-    button {
-      min-width: 56px;
-    }
-    .result {
-      margin-left: 1em;
-      align-self: flex-end;
-      @media screen and (max-width: 375px) {
-        margin-left: 0;
-        width: 100%;
-      }
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  border: none;
+  max-width: 368px;
+  label {
+    // grow ✓ shrink 𐄂 basis 100% (init size before remaining space is redistributed)
+    flex: 1 0 100%;
+    color: #ff7200;
+  }
+  input {
+    flex: 1;
+    min-width: 70px; // eq no-wrap
+  }
+  button {
+    min-width: 56px;
+  }
+  .result {
+    margin-left: 1em;
+    align-self: flex-end;
+    @media screen and (max-width: 375px) {
+      margin-left: 0;
+      width: 100%;
     }
   }
 }

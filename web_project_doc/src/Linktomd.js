@@ -1,13 +1,15 @@
 import React from 'react'
+import HeightPtGridSys from './pages/HeightPtGridSys'
+import Colors from './pages/Colors'
 
-const listLink = [
+export const listLink = [
   { id: 1, text: 'Questions', link: 'devfront.md' },
   { id: 2, text: 'B__E--M', link: 'bem.md' },
-  { id: 3, text: '8pt Grid system ', link: 'heightPtGridSys.md' },
+  { id: 3, text: '8pt Grid system ', component: HeightPtGridSys },
   { id: 4, text: 'Atomic Design Method', link: 'atomic_design_systeme_SK.md' },
   { id: 5, text: 'Atomic Design exemples', link: 'atomic_design_exemples.md' },
   { id: 6, text: 'Grids out of date ', link: 'grids.md' },
-  { id: 7, text: 'Colors ', link: 'colors.md' },
+  { id: 7, text: 'Colors ', component: Colors },
   { id: 8, text: 'CoreWeb static files ', link: 'staticfiles.md' },
   // { id: 7, text: 'React', link: 'react.md' },
 ]
@@ -50,9 +52,9 @@ const Link = ({ onClick, e, id }) => {
                   ? 'items-list__link items-list__link--actif'
                   : 'items-list__link'
               }
-              href={`#filename:~${ item.link }/`}
+              href={`#filename:~${item.link || item.text}/`}
               onClick={e => {
-                onClick(item.link, e, item.id)
+                onClick(item)
               }}
             >
               {item.text}
