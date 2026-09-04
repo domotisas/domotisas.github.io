@@ -11,6 +11,7 @@
 # production
 # comment for test on github pages
 # /build
+web_project_doc/build
 
 # misc
 .DS_Store
